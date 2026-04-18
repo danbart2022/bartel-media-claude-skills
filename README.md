@@ -13,6 +13,7 @@ Skills are extensions for [Claude Code](https://claude.ai/code) that teach Claud
 | [whisper](./whisper/) | Local audio transcription via OpenAI Whisper CLI | ❌ |
 | [transcribe](./transcribe/) | Cloud audio transcription + speaker diarization via OpenAI API | ✅ OpenAI |
 | [youtube-transcript](./youtube-transcript/) | Transcribe YouTube videos — captions first, local Whisper fallback | ❌ |
+| [seedance-prompt](./seedance-prompt/) | Generate professional Seedance 2.0 video prompts via CLI | ❌ |
 
 ## Installation
 
@@ -25,7 +26,7 @@ cp -r whisper ~/.claude/skills/
 Install all skills at once:
 
 ```bash
-for skill in whisper transcribe youtube-transcript; do
+for skill in whisper transcribe youtube-transcript seedance-prompt; do
   cp -r "$skill" ~/.claude/skills/
 done
 ```
