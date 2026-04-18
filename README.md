@@ -17,18 +17,21 @@ Skills are extensions for [Claude Code](https://claude.ai/code) that teach Claud
 
 ## Installation
 
-Install a single skill:
+### Via Claude Code (recommended)
+
+Just tell Claude:
+
+> *"Install the whisper skill from https://github.com/danbart2022/bartel-media-claude-skills"*
+
+Claude reads the `INSTALL.md` inside each skill folder and handles everything automatically — downloading, copying, installing dependencies, and confirming when done.
+
+### Manually
+
+Clone the repo and copy the skill folder:
 
 ```bash
-cp -r whisper ~/.claude/skills/
-```
-
-Install all skills at once:
-
-```bash
-for skill in whisper transcribe youtube-transcript seedance-prompt; do
-  cp -r "$skill" ~/.claude/skills/
-done
+git clone --depth=1 https://github.com/danbart2022/bartel-media-claude-skills.git
+cp -r bartel-media-claude-skills/whisper ~/.claude/skills/
 ```
 
 Claude Code automatically detects skills placed in `~/.claude/skills/`.
