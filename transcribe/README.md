@@ -1,59 +1,59 @@
-# Transcribe — Audio-Transkription mit Sprecher-Erkennung
+# Transcribe — Audio Transcription with Speaker Diarization
 
-Transkribiert Audiodateien über die **OpenAI API** (`gpt-4o-transcribe`).  
-Unterstützt optionale **Diarisierung** — erkennt und beschriftet verschiedene Sprecher.
+Transcribes audio files via the **OpenAI API** (`gpt-4o-transcribe`).  
+Supports optional **diarization** — identifies and labels different speakers.
 
-## Voraussetzungen
+## Requirements
 
-- OpenAI API Key als Umgebungsvariable: `OPENAI_API_KEY`
+- OpenAI API key set as an environment variable: `OPENAI_API_KEY`
 - Python 3.9+
 
 ```bash
 pip3 install openai
 ```
 
-## Installation als Claude Code Skill
+## Installation as a Claude Code Skill
 
 ```bash
 cp -r transcribe ~/.claude/skills/
 ```
 
-Claude erkennt den Skill automatisch anhand der `SKILL.md`.
+Claude Code picks up the skill automatically via `SKILL.md`.
 
-## Nutzung
+## Usage
 
-Claude ansprechen:
+Just ask Claude:
 
-> "Transkribiere dieses Interview: ~/aufnahme.mp3"  
-> "Transkribiere mit Sprechererkennung: ~/meeting.m4a"
+> "Transcribe this interview: ~/recording.mp3"  
+> "Transcribe with speaker detection: ~/meeting.m4a"
 
-## Direkte CLI-Nutzung
+## Direct CLI usage
 
-**Einfache Transkription:**
+**Simple transcription:**
 ```bash
 python3 scripts/transcribe_diarize.py audio.mp3
 ```
 
-**Mit Sprecher-Diarisierung:**
+**With speaker diarization:**
 ```bash
 python3 scripts/transcribe_diarize.py audio.mp3 \
   --model gpt-4o-transcribe-diarize \
   --response-format diarized_json
 ```
 
-**Mehrere Dateien:**
+**Multiple files:**
 ```bash
 python3 scripts/transcribe_diarize.py *.mp3 --out-dir ./output/
 ```
 
-## Modelle
+## Models
 
-| Modell | Einsatz |
-|--------|---------|
-| `gpt-4o-mini-transcribe` | **Standard** — schnell & günstig |
-| `gpt-4o-transcribe` | Höhere Qualität |
-| `gpt-4o-transcribe-diarize` | Mit Sprecher-Erkennung |
+| Model | Use case |
+|-------|----------|
+| `gpt-4o-mini-transcribe` | **Default** — fast & cost-efficient |
+| `gpt-4o-transcribe` | Higher quality |
+| `gpt-4o-transcribe-diarize` | With speaker recognition |
 
-## Unterstützte Formate
+## Supported formats
 
 `.mp3` `.mp4` `.m4a` `.wav` `.webm` `.ogg` `.flac`

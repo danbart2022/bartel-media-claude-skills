@@ -1,27 +1,27 @@
 # Bartel Media Claude Skills
 
-Eine Sammlung von Claude Code Skills für den täglichen Einsatz — entwickelt und kuratiert von [Bartel Media](https://bartel-media.de).
+A collection of Claude Code skills for everyday use — developed and curated by [Bartel Media](https://bartel-media.de).
 
-## Was sind Claude Code Skills?
+## What are Claude Code Skills?
 
-Skills sind Erweiterungen für [Claude Code](https://claude.ai/code), die Claude beibringen, bestimmte Aufgaben eigenständig und konsistent auszuführen. Jeder Skill besteht aus einer `SKILL.md`, die Claude als Anweisung dient.
+Skills are extensions for [Claude Code](https://claude.ai/code) that teach Claude to perform specific tasks autonomously and consistently. Each skill consists of a `SKILL.md` that Claude uses as its instruction set.
 
 ## Skills
 
-| Skill | Beschreibung | API-Key nötig |
-|-------|-------------|---------------|
-| [whisper](./whisper/) | Lokale Audio-Transkription mit OpenAI Whisper | ❌ |
-| [transcribe](./transcribe/) | Audio-Transkription + Sprecher-Erkennung via OpenAI API | ✅ OpenAI |
+| Skill | Description | API Key required |
+|-------|-------------|-----------------|
+| [whisper](./whisper/) | Local audio transcription via OpenAI Whisper CLI | ❌ |
+| [transcribe](./transcribe/) | Cloud audio transcription + speaker diarization via OpenAI API | ✅ OpenAI |
 
 ## Installation
 
-Einzelnen Skill installieren:
+Install a single skill:
 
 ```bash
 cp -r whisper ~/.claude/skills/
 ```
 
-Alle Skills auf einmal:
+Install all skills at once:
 
 ```bash
 for skill in whisper transcribe; do
@@ -29,8 +29,8 @@ for skill in whisper transcribe; do
 done
 ```
 
-Claude Code erkennt Skills automatisch im Verzeichnis `~/.claude/skills/`.
+Claude Code automatically detects skills placed in `~/.claude/skills/`.
 
-## Lizenz
+## License
 
 MIT

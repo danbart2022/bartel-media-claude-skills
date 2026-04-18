@@ -1,50 +1,50 @@
-# Whisper — Lokale Audio-Transkription
+# Whisper — Local Audio Transcription
 
-Transkribiert Audiodateien vollständig **lokal** mit OpenAI Whisper CLI.  
-Kein API-Key, keine Cloud, keine Token-Kosten.
+Transcribes audio files fully **locally** using the OpenAI Whisper CLI.  
+No API key, no cloud, no token costs.
 
-## Voraussetzungen
+## Requirements
 
 ```bash
 pip3 install openai-whisper
 ```
 
-Beim ersten Aufruf lädt Whisper das gewählte Modell automatisch herunter (~460 MB für `small`).
+On first use, Whisper downloads the selected model automatically (~460 MB for `small`).
 
-## Installation als Claude Code Skill
+## Installation as a Claude Code Skill
 
 ```bash
 cp -r whisper ~/.claude/skills/
 ```
 
-Claude erkennt den Skill automatisch anhand der `SKILL.md`.
+Claude Code picks up the skill automatically via `SKILL.md`.
 
-## Nutzung
+## Usage
 
-Einfach Claude ansprechen:
+Just ask Claude:
 
-> "Transkribiere diese Datei: ~/Downloads/aufnahme.m4a"  
-> "Schreib mir diese Sprachnachricht ab: /pfad/zur/datei.opus"
+> "Transcribe this file: ~/Downloads/recording.m4a"  
+> "Write down what's said in: /path/to/voicenote.opus"
 
-## Direkte CLI-Nutzung
+## Direct CLI usage
 
 ```bash
-whisper "/pfad/zur/datei.m4a" \
+whisper "/path/to/file.m4a" \
   --language German \
   --model small \
   --output_format txt \
   --output_dir /tmp/whisper_out
 ```
 
-## Modelle
+## Models
 
-| Modell | Einsatz | Größe |
-|--------|---------|-------|
-| `base` | Kurze Notizen < 2 Min | 140 MB |
-| `small` | **Standard** — gut & schnell | 460 MB |
-| `medium` | Schlechte Qualität oder Fachbegriffe | 1,5 GB |
-| `large` | Maximale Qualität | 3 GB |
+| Model | Use case | Size |
+|-------|----------|------|
+| `base` | Short notes < 2 min | 140 MB |
+| `small` | **Default** — good & fast | 460 MB |
+| `medium` | Poor audio quality or technical terms | 1.5 GB |
+| `large` | Maximum quality | 3 GB |
 
-## Unterstützte Formate
+## Supported formats
 
 `.m4a` `.mp3` `.wav` `.mp4` `.ogg` `.flac` `.webm` `.aac` `.opus`
